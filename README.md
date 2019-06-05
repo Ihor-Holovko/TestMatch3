@@ -1,7 +1,4 @@
-# Match 3 game
-
-## Завдання
-Зробити Match 3 гру використовуючи рушій Phaser 2 для мобільних пристроїв.
+# Match 3 game ( Phaser 2 )
 
 Must have:
 - Score +
@@ -10,15 +7,11 @@ Must have:
 - Main menu +
 - Game over +
 
-Бонусом:
+Бонусні завдання:
 - Туторіал +
 - Звук +
 - Бонусні жеми (gem 7-12) +
 - Particle Effects +
 - Підтримка різних розширень +
 
-## Ресурси
-Всі ресурси можна знайти в папках images та audio. 
-Шрифт: https://fonts.google.com/specimen/Fredoka+One?selection.family=Fredoka+One
-
-П.С. За потреби можна використовувати інші ресурси.
+П.С. Плагін зробив за стандартним шаблоном, для тесту.

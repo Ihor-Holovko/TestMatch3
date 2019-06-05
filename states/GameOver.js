@@ -69,10 +69,10 @@ export default class extends Phaser.State {
 		this.donuts = this.add.sprite(donutsPosX, donutsPosY, 'donut');
 		this.donuts.anchor.setTo(0.5, 0.5);
 
-		this.hand = this.add.sprite(130, 130, 'hand');
-		this.hand.anchor.setTo(0.3, 0.05);
-		this.hand.x = this.input.x;
-		this.hand.y = this.input.y;
+		// this.hand = this.add.sprite(130, 130, 'hand');
+		// this.hand.anchor.setTo(0.3, 0.05);
+		// this.hand.x = this.input.x;
+		// this.hand.y = this.input.y;
 
 
 
@@ -80,8 +80,8 @@ export default class extends Phaser.State {
 
 	update() {
 		this.donuts.angle += 0.3;
-		this.hand.x = this.input.x;
-		this.hand.y = this.input.y;
+		// this.hand.x = this.input.x;
+		// this.hand.y = this.input.y;
 
 		let offset = this.moveToXY(this.input.activePointer, this.textGameOver.x, this.textGameOver.y, 8);
 

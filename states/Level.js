@@ -22,7 +22,7 @@ export default class extends Phaser.State {
 		this.newInputY = 0;
 		this.score = 0;
 		this.counter = 0;
-		this.complTutorial = false;
+		this.complTutorial = true;
 		this.load.image("background", "./assets/images/backgrounds/background.jpg");
 		this.load.image("bg-score", "./assets/images/bg-score.png");
 		this.load.image("text-timeup", "./assets/images/text-timeup.png");
@@ -109,21 +109,23 @@ export default class extends Phaser.State {
 		this.emitter.makeParticles('particle_ex3');
 		this.emitter.gravity = 500;
 
-		if(JSON.parse(localStorage.getItem('complTutorial')) === true){
-			this.complTutorial = JSON.parse( localStorage.getItem('complTutorial') );
-			console.log("Tutorial is complite");
-		} else {
-			this.runTutorial();
-		}
+		// if(JSON.parse(localStorage.getItem('complTutorial')) === true){
+		// 	this.complTutorial = JSON.parse( localStorage.getItem('complTutorial') );
+		// 	console.log("Tutorial is complite");
+		// } else {
+		// 	this.runTutorial();
+		// }
+
+		this.runTutorial();
 
 	}
 
 	update() {
 
-		if(this.complTutorial == true){
-			this.hand.x = this.input.x;
-			this.hand.y = this.input.y;
-		}
+		// if(this.complTutorial == true){
+		// 	this.hand.x = this.input.x;
+		// 	this.hand.y = this.input.y;
+		// }
 
 		this.newInputX = this.input.x - this.startPointX;
 		this.newInputY = this.input.y - this.startPointY;
@@ -152,6 +154,7 @@ export default class extends Phaser.State {
 
 			tutorTweenY.onComplete.add(obj => {
 				this.complTutorial = true;
+				this.hand.alpha = 0;
 				localStorage.setItem("complTutorial", JSON.stringify(this.complTutorial) );
 			}, this);
 
@@ -202,9 +205,11 @@ export default class extends Phaser.State {
 
 	actionOnClickSfx() {
 		if (this.music.isPlaying == true) {
+			this.buttonSfx.alpha = 0.4;
 			this.audioClick.volume = 0;
 			this.music.pause();
 		} else {
+			this.buttonSfx.alpha = 0.4;
 			this.audioClick.volume = 1;
 			this.music.resume();
 		}

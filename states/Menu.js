@@ -60,10 +60,10 @@ export default class extends Phaser.State {
 		this.donuts = this.add.sprite(donutsPosX, donutsPosY, "donut");
 		this.donuts.anchor.setTo(0.5, 0.5);
 
-		this.hand = this.add.sprite(130, 130, "hand");
-		this.hand.anchor.setTo(0.3, 0.05);
-		this.hand.x = this.input.x;
-		this.hand.y = this.input.y;
+		// this.hand = this.add.sprite(130, 130, "hand");
+		// this.hand.anchor.setTo(0.3, 0.05);
+		// this.hand.x = this.input.x;
+		// this.hand.y = this.input.y;
 
 		this.myPlugin = this.game.plugins.add(Phaser.Plugin.MySimplePlugin);
 		this.myPlugin.addSprite(this.donuts);
@@ -72,8 +72,8 @@ export default class extends Phaser.State {
 	}
 
 	update() {
-		this.hand.x = this.input.x;
-		this.hand.y = this.input.y;
+		// this.hand.x = this.input.x;
+		// this.hand.y = this.input.y;
 	}
 
 	actionOnClickPlay() {
@@ -83,10 +83,11 @@ export default class extends Phaser.State {
 
 	actionOnClickSfx() {
 		if (this.music.isPlaying == true) {
-
+			this.buttonSfx.alpha = 0.4;
 			this.audioClick.volume = 0;
 			this.music.pause();
 		} else {
+			this.buttonSfx.alpha = 1
 			this.audioClick.volume = 1;
 			this.music.resume();
 		}
