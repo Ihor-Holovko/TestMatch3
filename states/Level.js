@@ -154,7 +154,7 @@ export default class extends Phaser.State {
 
 			tutorTweenY.onComplete.add(obj => {
 				this.complTutorial = true;
-				this.hand.alpha = 0;
+				this.hand.destroy();
 				localStorage.setItem("complTutorial", JSON.stringify(this.complTutorial) );
 			}, this);
 
