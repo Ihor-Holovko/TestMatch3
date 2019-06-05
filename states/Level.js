@@ -209,7 +209,7 @@ export default class extends Phaser.State {
 			this.audioClick.volume = 0;
 			this.music.pause();
 		} else {
-			this.buttonSfx.alpha = 0.4;
+			this.buttonSfx.alpha = 1;
 			this.audioClick.volume = 1;
 			this.music.resume();
 		}
